@@ -1,4 +1,4 @@
-### CSE 8A Homework 4
+### CSE 8A Project 1
 ### Author: Dani Nguyen
 ### Collaborations: Spencer Ellison <3 from the Physics Department ??? (not for long, maybe)
 
