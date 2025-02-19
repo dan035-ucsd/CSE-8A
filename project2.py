@@ -4,8 +4,8 @@
 
 import csv
 data = list(csv.reader(open("Ed Sheeran Dataset.csv")))
-track_id,album_name,album_id,release_date,popularity,explicit,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature,featured_artists,'type', duration,year,month,day_of_the_week
-2        3          4        5            6          7        8            9      10  11       12   13          14           15               16       17     18            19               20      21      22       23   24    25
+# track_id,album_name,album_id,release_date,popularity,explicit,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,time_signature,featured_artists,'type', duration,year,month,day_of_the_week
+# 2        3          4        5            6          7        8            9      10  11       12   13          14           15               16       17     18            19               20      21      22       23   24    25
 
 def average_col(col): 
     # 6 = popularity
