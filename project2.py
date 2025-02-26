@@ -68,7 +68,25 @@ def avg_col_perYear(col, year):
         count += 1
     return total / count
 
+def avg_col_perCategory(col, cat, filter):
+    """
+    Given a column, a category, and a filter.
+    Loops through a column of floats, separately loops through a column of category
+    and averages the floats only for those in the filtered category.
+    Ex: avg_col_perCategory(popularity, year, 2022)
+    """
+    total = 0
+    count = 0
+    lst = []
+    for row in data[1:]:          # filters to only year of interest
+        if row[cat] == str(filter):
+            lst.append(row)          
+    for row in lst:               # averages column
+        total += float(row[col])
+        count += 1
+    return total / count
+
 print("Ed Sheeran's top 3 most danceable releases are " + avg_col_byAlbum(8)[0][1] +  
       ", " + avg_col_byAlbum(8)[1][1] + ", and " + avg_col_byAlbum(8)[2][1] + ".")
 
-print(avg_col_perYear(6, 2017))
+print(avg_col_perCategory(6, 3, "Autumn Variations"))
