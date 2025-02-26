@@ -5,7 +5,7 @@
 # Questions
 # 1. What are Ed Sheeran's top 3 most danceable releases?
 # 2. What are the top 3 most popular releases of the year 2017?
-# 3. 
+# 3. What are the top 3 
 
 import csv
 data = list(csv.reader(open("Ed Sheeran Dataset.csv")))
