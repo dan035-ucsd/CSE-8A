@@ -2,11 +2,6 @@
 ### Author: Dani Nguyen
 ### Collaborations: Github Copilot
 
-# Questions
-# 1. What are Ed Sheeran's top 3 most danceable releases?
-# 2. What are the top 3 most popular releases of the year 2017?
-# 3. What are the top 3 
-
 import csv
 data = list(csv.reader(open("Ed Sheeran Dataset.csv")))
 
@@ -80,6 +75,10 @@ def avg_col_byAlbum(col):
     return lst                                            # and album names on the right.                
 
 def avg_col_byYear(col):
+    '''
+    Given a column. Averages the column for each year and returns a list of tuples of the average 
+    of that column and the associated year.
+    '''
     years = list(create_dict(23).items())
     lst = []
     for (year, tally) in years:                             # creates a sorted list of tuples 
@@ -87,11 +86,18 @@ def avg_col_byYear(col):
     lst.sort(reverse=True)                                # sorted in descending order,
     return lst                                            # and album names on the right. 
 
-print("Ed Sheeran's top 3 most danceable releases are " + avg_col_byAlbum(8)[0][1] +  
+# Questions
+print("1. What are Ed Sheeran's top 3 most danceable releases averaged by album?")
+
+print("Ed Sheeran's top 3 most danceable releases () are " + avg_col_byAlbum(8)[0][1] +  
       ", " + avg_col_byAlbum(8)[1][1] + ", and " + avg_col_byAlbum(8)[2][1] + ".")
 
-print("Ed Sheeran's top 3 least popular releases are " + avg_col_byAlbum(6)[-1][1] +
-      ", " + avg_col_byAlbum(6)[-2][1] + ", and " + avg_col_byAlbum(6)[-3][1] + ".")
+print("2. What are the top 3 loudest releases averaged by album)? ")
+
+print("Ed Sheeran's top 3 loudest releases are " + avg_col_byAlbum(11)[-1][1] +
+      ", " + avg_col_byAlbum(11)[-2][1] + ", and " + avg_col_byAlbum(11)[-3][1] + ".")
+
+print("3. What are the top 3 years where he had the most popular releases on average?")
 
 print("Ed Sheeran's top 3 years where he had the most popular releases on average are", 
       avg_col_byYear(6)[0][1] + ", " + avg_col_byYear(6)[1][1] + ", " + avg_col_byYear(6)[2][1])
