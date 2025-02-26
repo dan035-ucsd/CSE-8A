@@ -85,10 +85,13 @@ def avg_col_byYear(col):
     for (year, tally) in years:                             # creates a sorted list of tuples 
         lst.append((avg_col_perCategory(col, 23, year),year))       # with column averages on the left, 
     lst.sort(reverse=True)                                # sorted in descending order,
-    return lst                                            # and album names on the right.                
+    return lst                                            # and album names on the right. 
 
 print("Ed Sheeran's top 3 most danceable releases are " + avg_col_byAlbum(8)[0][1] +  
       ", " + avg_col_byAlbum(8)[1][1] + ", and " + avg_col_byAlbum(8)[2][1] + ".")
+
+print("Ed Sheeran's top 3 least popular releases are " + avg_col_byAlbum(6)[-1][1] +
+      ", " + avg_col_byAlbum(6)[-2][1] + ", and " + avg_col_byAlbum(6)[-3][1] + ".")
 
 print("Ed Sheeran's top 3 years where he had the most popular releases on average are", 
       avg_col_byYear(6)[0][1] + ", " + avg_col_byYear(6)[1][1] + ", " + avg_col_byYear(6)[2][1])
