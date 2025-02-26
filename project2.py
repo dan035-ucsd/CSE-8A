@@ -18,7 +18,7 @@ data = list(csv.reader(open("Ed Sheeran Dataset.csv")))
     # 13 = speechiness          # 19 = time_signature
     # 14 = acousticness         # 20 = featured_artists
     # 15 = instrumentalness     # 21 = type
-    # 16 = liveness             # 23
+    # 16 = liveness             # 23 = year
     # 17 = valence              
     # 18 = tempo                
 
@@ -60,12 +60,15 @@ def avg_col_perYear(col, year):
     total = 0
     count = 0
     lst = []
-    for row in data[1:]:
-        if row[-3] == str(year):
-            lst.append(row)                        
-    return lst
+    for row in data[1:]:          # filters to only year of interest
+        if row[23] == str(year):
+            lst.append(row)          
+    for row in lst:               # averages column
+        total += float(row[col])
+        count += 1
+    return total / count
 
 print("Ed Sheeran's top 3 most danceable releases are " + avg_col_byAlbum(8)[0][1] +  
       ", " + avg_col_byAlbum(8)[1][1] + ", and " + avg_col_byAlbum(8)[2][1] + ".")
 
-      "test"
+print(avg_col_perYear(6, 2017))
