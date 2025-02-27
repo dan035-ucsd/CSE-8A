@@ -89,15 +89,15 @@ def avg_col_byYear(col):
 # Questions
 print("1. What are Ed Sheeran's top 3 most danceable releases averaged by album?")
 
-print("Ed Sheeran's top 3 most danceable releases () are " + avg_col_byAlbum(8)[0][1] +  
-      ", " + avg_col_byAlbum(8)[1][1] + ", and " + avg_col_byAlbum(8)[2][1] + ".")
+print("Ed Sheeran's top 3 most danceable releases are " + avg_col_byAlbum(8)[0][1] +  
+      ", " + avg_col_byAlbum(8)[1][1] + ", and " + avg_col_byAlbum(8)[2][1] + ".\n")
 
 print("2. What are the top 3 quietest releases averaged by album?")
 
 print("Ed Sheeran's top 3 quietest releases are " + avg_col_byAlbum(11)[-1][1] +
-      ", " + avg_col_byAlbum(11)[-2][1] + ", and " + avg_col_byAlbum(11)[-3][1] + ".")
+      ", " + avg_col_byAlbum(11)[-2][1] + ", and " + avg_col_byAlbum(11)[-3][1] + ".\n")
 
 print("3. What are the top 3 years where he had the most popular releases on average?")
 
 print("Ed Sheeran's top 3 years where he had the most popular releases on average are", 
-      avg_col_byYear(6)[0][1] + ", " + avg_col_byYear(6)[1][1] + ", " + avg_col_byYear(6)[2][1])
+      avg_col_byYear(6)[0][1] + ", " + avg_col_byYear(6)[1][1] + ", " + avg_col_byYear(6)[2][1] + ".\n")
