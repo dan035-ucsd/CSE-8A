@@ -14,3 +14,5 @@ img.putpixel(width() - 1 - x, y, color)
 # rotate image
 
 # crop image
+
+# edge detection
