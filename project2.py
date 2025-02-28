@@ -81,10 +81,10 @@ def avg_col_byYear(col):
     '''
     years = list(create_dict(23).items())
     lst = []
-    for (year, tally) in years:                             # creates a sorted list of tuples 
-        lst.append((avg_col_perCategory(col, 23, year),year))       # with column averages on the left, 
-    lst.sort(reverse=True)                                # sorted in descending order,
-    return lst                                            # and album names on the right. 
+    for (year, tally) in years:                                  # creates a sorted list of tuples 
+        lst.append((avg_col_perCategory(col, 23, year),year))    # with column averages on the left, 
+    lst.sort(reverse=True)                                       # sorted in descending order,
+    return lst                                                   # and album names on the right. 
 
 # Questions
 print("1. What are Ed Sheeran's top 3 most danceable releases averaged by album?")
@@ -101,3 +101,16 @@ print("3. What are the top 3 years where he had the most popular releases on ave
 
 print("Ed Sheeran's top 3 years where he had the most popular releases on average are", 
       avg_col_byYear(6)[0][1] + ", " + avg_col_byYear(6)[1][1] + ", " + avg_col_byYear(6)[2][1] + ".\n")
+
+
+### TESTING
+
+# 18 = tempo
+#print(avg_col_byAlbum(18)[0][1] +  ", " + avg_col_byAlbum(18)[1][1] + ", and " + avg_col_byAlbum(18)[2][1] + ".\n")
+
+#print(avg_col_byYear(18)[0][1] + ", " + avg_col_byYear(18)[1][1] + ", " + avg_col_byYear(18)[2][1] + ".\n")
+
+# 9 = energy
+#print(avg_col_byAlbum(9)[0][1] +  ", " + avg_col_byAlbum(9)[1][1] + ", and " + avg_col_byAlbum(9)[2][1] + ".\n")
+
+#print(avg_col_byYear(9)[0][1] + ", " + avg_col_byYear(9)[1][1] + ", " + avg_col_byYear(9)[2][1] + ".\n")
