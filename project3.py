@@ -8,10 +8,13 @@ from PIL import Image
 scene = Image.open("scene.jpg")
 shaq = Image.open("shaq.jpg")
 ball = Image.open("ball.jpg")
+pile = Image.open("pile.jpg")
 
 scene = scene.resize((1600, 1200))
 shaq = shaq.resize((1028, 786))
 ball = ball.resize((152, 149))
+pile = pile.resize((200, 200))
+
 
 def flipHori(inp):     # flip image horizontally
     out = Image.new("RGB", (inp.width, inp.height))
@@ -48,5 +51,7 @@ step2 = overlay(step1, ball, 1250, 573, 20,20,20, 0)
 step3 = overlay(step2, flipHori(ball.resize((114,111))), 1000, 500, 20,20,20, 0)
 step4 = overlay(step3, flipVert(ball.resize((84,81))), 800, 560, 20,20,20, 0)
 step5 = overlay(step4, ball.resize((54,51)).rotate(40), 650, 690, 20,20,20, 0)
+step6 = overlay(step5, ball.resize((30,27)), 530, 900, 20,20,20, 0)
+step7 = overlay(step6, pile, 410, 1000, 20,20,20, 0)
 
-step5.show()
+step7.show()
