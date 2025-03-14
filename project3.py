@@ -44,9 +44,9 @@ def overlay(inp, overlay, xloc, yloc, rthresh, gthresh, bthresh, lessthan):
     return inp
 
 step1 = overlay(scene, shaq, 600, 414, 235,235,235, 1)
-step2 = overlay(step1, ball, 1250, 573, 10,10,10, 0)
-step3 = overlay(step2, flipHori(ball.resize((114,111))), 1000, 500, 10,10,10, 0)
-step4 = overlay(step3, flipVert(ball.resize((84,81))), 800, 560, 10,10,10, 0)
-step5 = overlay(step4, ball.resize((54,51)).rotate(40), 650, 690, 10,10,10, 0)
+step2 = overlay(step1, ball, 1250, 573, 20,20,20, 0)
+step3 = overlay(step2, flipHori(ball.resize((114,111))), 1000, 500, 20,20,20, 0)
+step4 = overlay(step3, flipVert(ball.resize((84,81))), 800, 560, 20,20,20, 0)
+step5 = overlay(step4, ball.resize((54,51)).rotate(40), 650, 690, 20,20,20, 0)
 
 step5.show()
