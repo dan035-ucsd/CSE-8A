@@ -45,18 +45,8 @@ def overlay(inp, overlay, xloc, yloc, rthresh, gthresh, bthresh, lessthan):
 
 step1 = overlay(scene, shaq, 600, 414, 235,235,235, 1)
 step2 = overlay(step1, ball, 1250, 573, 10,10,10, 0)
-step3 = overlay(step2, flipHori(ball.resize((113,110))), 1000, 500, 10,10,10, 0)
+step3 = overlay(step2, flipHori(ball.resize((114,111))), 1000, 500, 10,10,10, 0)
 step4 = overlay(step3, flipVert(ball.resize((84,81))), 800, 560, 10,10,10, 0)
+step5 = overlay(step4, ball.resize((54,51)).rotate(40), 650, 690, 10,10,10, 0)
 
-step2.show()
-
-
-# color filter
-
-# edge detection
-# https://www.geeksforgeeks.org/what-is-edge-detection-in-image-processing/
-
-# overlay images
-# https://stackoverflow.com/questions/10640114/overlay-two-same-sized-images-in-python
-
-# out.save("output.jpg")
+step5.show()
