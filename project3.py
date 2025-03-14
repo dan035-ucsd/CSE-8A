@@ -10,8 +10,10 @@ shaq = Image.open("shaq.jpg")
 ball = Image.open("ball.jpg")
 
 scene = scene.resize((1600, 1200))
+shaq = shaq.resize((1028, 786))
+ball = ball.resize((152, 149))
 
-def flipHoriz(inp):     # flip image horizontally
+def flipHori(inp):     # flip image horizontally
     out = Image.new("RGB", (inp.width, inp.height))
     for x in range(inp.width):
         for y in range(inp.height):
@@ -25,14 +27,28 @@ def flipVert(inp):      # flip image vertically
             out.putpixel((x, inp.height - 1 - y), inp.getpixel((x, y)))
     return out
 
-def overlay(inp, overlay, xloc, yloc):         # overlay an image
-    out = Image.new("RGB", (inp.width, inp.height))
+def overlay(inp, overlay, xloc, yloc, rthresh, gthresh, bthresh, lessthan):     
+    """ Over lays an image on top of another image while keying out certain
+    RGB values of the overlay image"""   
     for x in range(xloc, xloc + overlay.width):
         for y in range(yloc, yloc + overlay.height):
-            for i in range(overlay.width):
-                for j in range(overlay.height):
+            if lessthan == 1:
+                if overlay.getpixel((x - xloc, y - yloc)) <= (rthresh, gthresh, bthresh):
                     inp.putpixel((x, y), overlay.getpixel((x - xloc, y - yloc)))
-    
+            elif lessthan == 0:
+                if overlay.getpixel((x - xloc, y - yloc)) >= (rthresh, gthresh, bthresh):
+                    inp.putpixel((x, y), overlay.getpixel((x - xloc, y - yloc)))
+            else:
+                print("Invalid final parameter")
+                pass
+    return inp
+
+step1 = overlay(scene, shaq, 600, 414, 235,235,235, 1)
+step2 = overlay(step1, ball, 1250, 573, 10,10,10, 0)
+step3 = overlay(step2, flipHori(ball.resize((113,110))), 1000, 500, 10,10,10, 0)
+step4 = overlay(step3, flipVert(ball.resize((84,81))), 800, 560, 10,10,10, 0)
+
+step2.show()
 
 
 # color filter
