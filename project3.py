@@ -42,8 +42,8 @@ def overlay(inp, overlay, xloc, yloc, rthresh, gthresh, bthresh, lessthan):
                 if overlay.getpixel((x - xloc, y - yloc)) >= (rthresh, gthresh, bthresh):
                     inp.putpixel((x, y), overlay.getpixel((x - xloc, y - yloc)))
             else:
-                print("Invalid final parameter")
-                pass
+                print("Invalid parameter")
+                quit()
     return inp
 
 step1 = overlay(scene, shaq, 600, 414, 235,235,235, 1)
@@ -52,6 +52,6 @@ step3 = overlay(step2, flipHori(ball.resize((114,111))), 1000, 500, 20,20,20, 0)
 step4 = overlay(step3, flipVert(ball.resize((84,81))), 800, 560, 20,20,20, 0)
 step5 = overlay(step4, ball.resize((54,51)).rotate(40), 650, 690, 20,20,20, 0)
 step6 = overlay(step5, ball.resize((30,27)), 530, 900, 20,20,20, 0)
-step7 = overlay(step6, pile, 410, 1000, 20,20,20, 0)
+step7 = overlay(step6, pile, 410, 1000, 20,20,20, 2)
 
 step7.show()
